@@ -1,0 +1,16 @@
+FROM mysql:8.0
+
+RUN useradd -u 1000 laravel
+
+ENV MYSQL_DATABASE=laravel_db
+ENV MYSQL_USER=laravel_user
+ENV MYSQL_PASSWORD=laravel_pass
+ENV MYSQL_ROOT_PASSWORD=laravel_pass
+ENV MYSQL_ALLOW_EMPTY_PASSWORD=yes
+ENV MYSQL_ROOT_HOST=%
+ENV TZ=America/Sao_Paulo
+
+COPY ./scripts/db/01_create_tables.sql /docker-entrypoint-initdb.d/
+COPY ./scripts/db/02_insert_data.sql /docker-entrypoint-initdb.d/
+
+EXPOSE 3306
