@@ -168,11 +168,13 @@ DB_PASSWORD=laravel_pass
 
 **Criar model de usuário:**
 
-```
+```sh
 php src/artisan make:model User
+```
 
-# Entre no arquivo src/app/Models/User.php e cole o codigo abaixo
+# Entre no arquivo src/app/Models/User.php e substitua com o codigo abaixo
 
+```php
 <?php
 
 namespace App\Models;
@@ -200,11 +202,14 @@ class User extends Model
 ```
 
 **Criar controlador que vai buscar os dados clientes:**
+
 ```sh
 php src/artisan make:controller UserController
+```
 
-# Entre no arquivo src/app/Http/Controllers/UserController.php e cole o codigo abaixo
+# Entre no arquivo src/app/Http/Controllers/UserController.php e substitua tudo pelo codigo abaixo
 
+```php
 <?php
 
 namespace App\Http\Controllers;
@@ -225,7 +230,7 @@ class UserController extends Controller
 
 **Alterar o arquivo de rotas:**
 
-Entre na pasta src/routes/api.php e cole o codigo abaixo:
+Entre na pasta src/routes/api.php e substitua tudo pelo codigo abaixo
 
 ```sh
 <?php
@@ -255,4 +260,5 @@ Route::get('/users', [UserController::class, 'index']);
 php src/artisan serve --host=0.0.0.0 --port=8000 
 ```
 
+**Abra o 
 http://localhost:8000/api/users
