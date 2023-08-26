@@ -124,7 +124,7 @@ para o diretório de trabalho /app dentro do container
 
 ```bash
 # Estamos usando o sh (shell) para entrar no container
-docker run -it --rm --name laravel-starter-app -p 8000:8000 -v ./:/app -w /app --link laravel-starter-db composer /bin/sh
+docker run -it --rm --name laravel-starter-app -p 8000:8000 -v ${PWD}:/app -w /app --link laravel-starter-db composer /bin/sh
 
 # Garantir a vitoria com o driver do mysql no container docker
 docker-php-ext-install pdo pdo_mysql
