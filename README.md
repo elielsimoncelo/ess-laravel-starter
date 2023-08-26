@@ -136,6 +136,10 @@ Vamos executar o comando abaixo dentro do container laravel-starter-app para cri
 como banco de dados.
 
 ```bash
+# aumentar o timeout para a criacao do projeto
+composer config --global process-timeout 2000
+
+# criar o projeto
 composer create-project --prefer-dist laravel/laravel src
 ```
 
